@@ -1,0 +1,28 @@
+{
+    "name": "hazard-id",
+    "version": "1.0.0",
+    "description": "API for classifying hazards in reports using Google Cloud Functions",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "deploy": "gcloud functions deploy hazard-id --gen2 --region=europe-west2 --runtime=nodejs20 --entry-point=classify --trigger-http --allow-unauthenticated",
+        "test": "jest",
+        "coverage": "jest --coverage"
+    },
+    "dependencies": {
+        "@google-cloud/functions-framework": "^3.0.0",
+        "@google-cloud/storage": "^7.7.0",
+        "axios": "^1.6.7",
+        "express": "^4.18.2",
+        "natural": "^6.10.4"
+    },
+    "engines": {
+        "node": "20"
+    },
+    "author": "Jasper Koenig",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "supertest": "^6.3.4"
+    }
+}

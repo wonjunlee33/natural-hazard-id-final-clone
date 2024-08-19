@@ -1,0 +1,157 @@
+openapi: 3.0.0
+info:
+  title: HazardID Classification API
+  description: API for classifying reports based on hazard definitions and refining those classifications. Also provides hazard information based on UNDRR-ISC hazard codes.
+  version: "1.0.0"
+paths:
+  /classify/startClassification:
+    post:
+      summary: Initiate report classification
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                report:
+                  type: string
+                  description: Report text to be classified.
+              required:
+                - report
+      responses:
+        '200':
+          description: Classification questions based on report
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    question:
+                      type: string
+                    hazardCode:
+                      type: string
+        '400':
+          description: Bad request if report is missing
+  /classify/startGPTClassification:
+    post:
+      summary: Start classification using GPT for hazard identification
+      requestBody:
+        description: Same as /startClassification
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClassificationRequest'
+      responses:
+        '200':
+          description: GPT-identified hazards and questions based on report
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionsResponse'
+  /classify/startCombinedClassification:
+    post:
+      summary: Combine standard and GPT classification methods
+      requestBody:
+        description: Initiate repor classification using GPT and rules based methods
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClassificationRequest'
+      responses:
+        '200':
+          description: Combined set of questions from both methods
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionsResponse'
+  /classify/refineClassification:
+    post:
+      summary: Refine classification with confirmed and rejected hazards
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                confirmed:
+                  type: array
+                  items:
+                    type: string
+                rejected:
+                  type: array
+                  items:
+                    type: string
+              required:
+                - confirmed
+                - rejected
+      responses:
+        '200':
+          description: Further refined questions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    question:
+                      type: string
+                    hazardCode:
+                      type: string
+        '400':
+          description: Bad request if confirmed or rejected hazards are missing
+  /classify/getHazardsByCode:
+    post:
+      summary: Get hazard definitions by codes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hazardCodes:
+                  type: array
+                  items:
+                    type: string
+              required:
+                - hazardCodes
+      responses:
+        '200':
+          description: Hazard definitions for the provided codes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Hazard_Code:
+                      type: string
+                    Description:
+                      type: string
+components:
+  schemas:
+    ClassificationRequest:
+      type: object
+      properties:
+        report:
+          type: string
+          description: Report text to be classified.
+      required:
+        - report
+    QuestionsResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          question:
+            type: string
+          hazardCode:
+            type: string
