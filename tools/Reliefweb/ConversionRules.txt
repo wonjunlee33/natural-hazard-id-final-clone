@@ -1,0 +1,22 @@
+CW - MH
+Complex Emergency
+DR - MH
+EQ - GH
+EP - BI
+EC - MH
+FR - if checmical, city, building, or industrial in body: add TL
+FF
+FL - MH, if resevoir in body, add TL
+HT - MH
+IN -BI
+LS - GH
+MS - MH
+Other
+ST - MH
+AV - MH
+SS - MH
+AC - TL
+TC - MH
+TS - MH, if earthquake or in body or volcano in body: add GH, if volcano in body: add GH
+VO - GH
+WF - EN

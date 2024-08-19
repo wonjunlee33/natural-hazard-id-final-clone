@@ -1,0 +1,47 @@
+<testsuite name="nose2-junit" errors="0" failures="0" skipped="0" tests="15" time="1.076">
+  <testcase timestamp="2024-03-24T01:57:42.522968" time="0.092356" classname="test_RulesBased.TestHazardIdentifier" name="test_define_hazards">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:42.615353" time="0.001341" classname="test_RulesBased.TestHazardIdentifier" name="test_define_hazards_neg">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:42.616715" time="0.001106" classname="test_RulesBased.TestHazardIdentifier" name="test_identify_hazards">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:42.617838" time="0.000338" classname="test_RulesBased.TestHazardIdentifier" name="test_load_event_report">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:42.618190" time="0.960734" classname="test_RulesBased.TestHazardIdentifier" name="test_load_report_excel">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.578950" time="0.001409" classname="test_RulesBased.TestHazardIdentifier" name="test_reason_hazards">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.580378" time="0.001151" classname="test_RulesBased.TestHazardIdentifier" name="test_reason_hazards_neg">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.581556" time="0.001320" classname="test_RulesBased.TestHazardIdentifier" name="test_reject_hazards">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.582892" time="0.007829" classname="test_RulesBased.TestHazardIdentifier" name="test_tokenize_report">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.590756" time="0.001566" classname="test_RulesBased.TestHazardIdentifier" name="test_upstream_hazards">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.592338" time="0.001372" classname="test_RulesBased.TestHazardIdentifier" name="test_upstream_hazards_define">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.593728" time="0.001474" classname="test_RulesBased.TestHazardIdentifier" name="test_upstream_hazards_define_neg">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.595219" time="0.001107" classname="test_RulesBased.TestHazardIdentifier" name="test_upstream_hazards_neg">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.596340" time="0.001126" classname="test_RulesBased.TestHazardIdentifier" name="test_upstream_hazards_reason">
+    <system-out />
+    </testcase>
+  <testcase timestamp="2024-03-24T01:57:43.597479" time="0.001133" classname="test_RulesBased.TestHazardIdentifier" name="test_upstream_hazards_reason_neg">
+    <system-out />
+    </testcase>
+  </testsuite>
